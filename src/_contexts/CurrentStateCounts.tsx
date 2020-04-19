@@ -23,11 +23,31 @@ function currentStateCountsReducer(state: any, action: any) {
   }
 }
 
-// TODO set up default config
-//! resultGroup = 0
-//! resultSize = 5
-//! sort direction = ascending (descending for case count)
-//! property to sort by = state abbr or case count
+enum sortDirection {
+  Ascending,
+  Descending,
+}
+
+enum sortBy {
+  state,
+  positive,
+  recovered,
+  totalTestResults,
+}
+
+interface IStateCounts {
+  currentIndex: number
+  resultSize: number
+  sortDirection: sortDirection
+  sortBy: sortBy
+}
+
+const initialValues: IStateCounts = {
+  currentIndex: 0,
+  resultSize: 5,
+  sortDirection: sortDirection.Ascending,
+  sortBy: sortBy.state,
+}
 
 export default function CurrentStateCounts({
   children,
@@ -36,7 +56,7 @@ export default function CurrentStateCounts({
 }) {
   const [currentStateCounts, dispatch] = useReducer(
     currentStateCountsReducer,
-    {}
+    initialValues
   )
   // pagination
 
