@@ -5,7 +5,7 @@ import DataService from './_services/data_service'
 import { currentStateData } from './_fixtures/current_state_data'
 
 // import constants
-import { findStateName, State } from './_constants/index'
+import { findStateName } from './_constants/index'
 
 export default function App() {
   const [stateCurrent, setStateCurrent] = useState(currentStateData)

@@ -242,9 +242,10 @@ export const stateList: State[] = [
   },
 ]
 
-export function findStateName(stateCode: string): string {
+export function findStateName(abbr: string): string {
+  /* Find a state's name from the abbreviation */
   const stateDetails = stateList.find(
-    (state: State) => state.abbreviation === stateCode
+    (state: State) => state.abbreviation === abbr
   )
   return stateDetails?.name || ''
 }
