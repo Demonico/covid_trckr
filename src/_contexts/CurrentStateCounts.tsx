@@ -40,6 +40,7 @@ interface IStateCounts {
   resultSize: number
   sortDirection: sortDirection
   sortBy: sortBy
+  results: any[]
 }
 
 const initialValues: IStateCounts = {
@@ -47,6 +48,7 @@ const initialValues: IStateCounts = {
   resultSize: 5,
   sortDirection: sortDirection.Ascending,
   sortBy: sortBy.state,
+  results: [],
 }
 
 export default function CurrentStateCounts({
